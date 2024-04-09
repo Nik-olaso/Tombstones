@@ -1,0 +1,210 @@
+{% load static %}
+
+
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+    html, body{
+        background-color: #DBDBDB;
+        /* background-size: cover;
+        margin: 0;
+        padding:0; */
+        font-family: "Oswald", sans-serif;
+    }
+    .head{
+        display: flex;
+        background: linear-gradient(to bottom right, #A9B1D1, #DBDBDB);
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+    .arrow-3 {
+        color: #8C8C8C;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 20px;
+        height: 10px;
+        line-height: 18px; 
+        display: inline-block; 
+        margin: 0 2vw 5vh 2vw;     
+        /* position: absolute; */
+    }
+    .arrow-3 .arrow-3-icon {
+        position: relative;
+        top: -1px;
+        transition: transform 0.3s ease;
+        vertical-align: middle;
+        transform: rotate(180deg);
+        display: inline-block;
+    }
+    .arrow-3 .arrow-3-iconcircle {
+        transition: stroke-dashoffset .3s ease;
+        stroke-dasharray: 95;
+        stroke-dashoffset: 95;
+    }
+    .arrow-3:hover .arrow-3-icon {
+        transform: translate3d(5px, 0, 0);
+        transform: rotate(180deg);
+        display: inline-block;
+    }
+    .arrow-3:hover .arrow-3-iconcircle {
+        stroke-dashoffset: 0;
+    }
+    .exit{
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    .head_profile{
+        display: flex;
+        justify-content: center;
+        height: 10vh;
+    }
+    .profile_image{
+        /* display: flex;
+        justify-content: center; */
+        margin-left: 5vh;
+        margin-top: 5vh;
+    }
+    h3{
+        text-align: center;
+    }
+    .profile_info{
+        border-bottom: solid 1px black;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .profile_charac{
+        /* background-color: red; */
+        height: 25vh;
+        margin-top: 5vh;
+    }
+    .tomb_sum{
+        margin-left: 5vh;
+    }
+    .tombstone_block{
+        display:flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        background-size: cover;
+        width: 15vw;
+        height: 30vh;
+    }
+    .tombstone_image{
+        /* position: relative;
+        height: 10vw; */
+        width: 10vw;
+        height: 25vh;
+        background-color: #858585;
+        border-top-left-radius: 7vh;
+        border-top-right-radius: 7vh;
+    }
+    .tombstone_image img{
+        width: 30vw;
+    }
+    .tombstone_logo {
+        position: absolute;
+       
+    }
+    .tombstone_logo img{
+        width: 5vw;
+        height: 10vh;
+    }
+    .tombstone_text{
+        text-align:center;
+        color: #000000;
+        font-weight: 900;
+        font-size: 20px;
+        font-family: "Oswald", sans-serif;
+        position:  absolute;
+        margin-top: 10vh;
+    }
+    .logo{
+        margin: auto;
+        display: flex;
+        width: 60%;
+        flex-wrap: wrap;
+        text-align: left;
+    }
+    .logo_image{
+        border-radius: 50%;
+    }
+    a{
+        text-decoration: none;
+    }
+    .all_tombstones{
+        display:flex;
+    }
+    @media screen and (min-width: 250px) and (max-width: 500px){
+        .head{
+            display: flex;
+            flex-direction: column;
+            height: 15vh;
+            padding-bottom: 2vh;
+        }
+        .tombstone_block{
+            width: 48vw;
+            margin-top: 2vh;
+        }
+        .tombstone_image{
+            width: 35vw;
+            min-height: 30vh;
+        }
+        .tombstone_text{
+            position: absolute;
+            margin-top: 10vh;
+            word-wrap: break-word;
+            width: 30vw;
+            height: 20vh;
+            /* background-color: #000000; */
+        }
+        .tombstone_logo img{
+            width: 17vw;
+            height: 8vh;
+            margin-top: 1vh;
+        }
+        .all_tombstones{
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    @media screen and (min-width: 500px) and (max-width: 1400px){
+        .head{
+            display: flex;
+            flex-direction: column;
+            height: 25vh;
+
+        }
+        /* .head_profile{
+            margin-bottom: 7vh;
+        } */
+        .tombstone_block{
+            width: 25vw;
+            height: 50vh;
+            /* background-color: tomato; */
+            margin-bottom: 7vh;
+        }
+        .tombstone_image{
+            width: 20vw;
+            height: 47vh;
+        }
+        .tombstone_text{
+            /* position: relative; */
+            word-wrap: break-word;
+            /* background-color: red; */
+            width: 20vw;
+            margin-top: 17vh;
+        }
+        .tombstone_logo img{
+            margin-top: 2vh;
+            width: 10vw;
+            height: 15vh;
+           
+        }
+        .all_tombstones{
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+</style>

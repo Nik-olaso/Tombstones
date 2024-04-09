@@ -1,0 +1,159 @@
+{% load static %}
+
+
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+    html {
+        height: 100%;
+        width: 100%;
+    }
+    .main_unit{
+        width: 30%;
+        padding: 50px 30px 44px;
+        border-radius: 1.25rem;
+        text-align: center;
+        background-color: #f0f0f0;
+    }
+    h1{
+        font-size: 26px;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+    body{
+        color: black;
+        font-family: "Oswald", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: inherit;
+        background-color: #DBDBDB;
+    }
+    .social-icons-2 {
+        padding: 0;
+        list-style: none;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    .social-icons-2 li {
+        display: inline-block;
+        position: relative;
+        margin: 10px;
+    
+    }
+    .social-icons-2 li a {
+        width: 300px;
+        height: 60px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 5%;
+        padding: 6px;
+        box-sizing: border-box;
+        text-decoration:none;
+        box-shadow: 0 8px 12px rgba(0,0,0,0.3);
+        background: linear-gradient(0deg, #ddd, #fff);
+        transition: .5s;
+        color: gray;
+    }
+    .social-icons-2 li a:hover {
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        color: #000;
+    }
+    .social-icons-2 li a i {
+        display: block;
+        background: linear-gradient(0deg, #fff, #ddd);
+        border-radius: 50%;
+        padding: 12px;
+        font-size: 24px;
+        color: #969696;
+        transition: .5s;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        box-sizing: content-box;
+    }
+    .social-icons-2 li a:hover i {
+        color: #337AB7;
+    }
+    .social-icons-2 li a img {
+        width: 24px;
+        height: 24px;
+
+    }
+
+    .container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .arrow-3 {
+        color: #000;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 18px;
+        height: 18px;
+        line-height: 18px; 
+        display: inline-block; 
+        margin: 20px;
+    }
+    .arrow-3 .arrow-3-icon {
+        position: relative;
+        top: -1px;
+        transition: transform 0.3s ease;
+        vertical-align: middle;
+        transform: rotate(180deg);
+        display: inline-block;
+    }
+    .arrow-3 .arrow-3-iconcircle {
+        transition: stroke-dashoffset .3s ease;
+        stroke-dasharray: 95;
+        stroke-dashoffset: 95;
+    }
+    .arrow-3:hover .arrow-3-icon {
+        transform: translate3d(5px, 0, 0);
+        transform: rotate(180deg);
+        display: inline-block;
+    }
+    .arrow-3:hover .arrow-3-iconcircle {
+        stroke-dashoffset: 0;
+    }
+
+    @media screen and (min-width: 250px) and (max-width: 500px) {
+        .main_unit{
+            width: 70vw;
+            height: 25vh;
+        }
+        .social-icons-2 li a{
+            text-align: center;
+            width: 50vw;
+            height: 5vh;
+            margin-bottom: 0;
+            padding-bottom: 6vh;
+        }
+        .main_unit h1{
+            margin-top: 0;
+        }
+    }
+
+    @media screen and (min-width: 500px) and (max-width: 1100px) {
+        .main_unit{
+            width: 70vw;
+            height: 65vh;
+        }
+        .social-icons-2 li a{
+            width: 50vw;
+            height: 15vh;
+            margin-bottom: 0;
+            
+        }
+        .main_unit h1{
+            margin-top: 0;
+        }
+    }
+
+</style>

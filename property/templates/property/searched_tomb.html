@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% include 'snippets/base_css.html' %}
+{% block content %}
+
+
+
+{% if searched %}    
+    <form class="searchbar_new" method="POST" action="{% url 'new_tomb' %}">
+        {% csrf_token %}
+        <button class="btn btn-outline-secondary" type="submit" name="new">Новые стартапы</button>
+    </form>
+
+    <form class="searchbar_old" method="POST" action="{% url 'old_tomb' %}">
+        {% csrf_token %}
+        <button class="btn btn-outline-secondary" type="submit" name="old">Старые стартапы</button>
+    </form>
+
+    <form class="searchbar" method="POST" action="{% url 'searched_tomb' %}">
+        {% csrf_token %}
+        
+        <input type="search" class="form-control me-2" placeholder="Найти стартап" aria-label="Search" name="searched">
+        <button class="btn btn-outline-secondary" type="submit">Поиск</button>
+    </form>
+
+    <form class="searchbar_new_add" method="POST" action="{% url 'new_add_tomb' %}">
+        {% csrf_token %}
+        <button class="btn btn-outline-secondary" type="submit" name="new_add">Новые добавленные</button>
+    </form>
+
+    <form class="searchbar_old_add" method="POST" action="{% url 'old_add_tomb' %}">
+        {% csrf_token %}
+        <button class="btn btn-outline-secondary" type="submit" name="old_add">Старые добавленные</button>
+    </form>
+
+
+    {% for searched_tombstone in searched_tombstones %}
+    <a href="{% url 'tombstone' searched_tombstone.tombstone_id %}">
+        <div class="tombstone_block">
+            <div class='tombstone_image'>
+            </div>
+            <div class='tombstone_logo'>
+                {% if searched_tombstone.logo %}
+                    <p><img class="logo_image rounded-circle m-auto d-block" src="{{searched_tombstone.logo.url}}"></p>
+                {% endif %}
+            </div>
+            <div class='tombstone_text'>
+                <p>{{ searched_tombstone.company_name }}</p>
+                <p>{{ searched_tombstone.birth_year }} - {{ searched_tombstone.death_year }}</p>  
+            </div>
+        </div> 
+    </a>
+    {% endfor %}
+{% else %}
+    <form class="searchbar" method="POST" action="{% url 'searched_tomb' %}">
+        {% csrf_token %}
+        <input type="search" class="form-control me-2" placeholder="Введите стартап" aria-label="Search" name="searched">
+        <button class="btn btn-outline-secondary" type="submit">Поиск</button>
+    </form>
+
+    <form class="searchbar_new" method="POST" action="{% url 'new_tomb' %}">
+        {% csrf_token %}
+        <button class="btn btn-outline-secondary" type="submit" name="new">Новые стартапы</button>
+    </form>
+
+    <form class="searchbar_old" method="POST" action="{% url 'old_tomb' %}">
+        {% csrf_token %}
+        <button class="btn btn-outline-secondary" type="submit" name="old">Старые стартапы</button>
+    </form>
+
+    <form class="searchbar_new_add" method="POST" action="{% url 'new_add_tomb' %}">
+        {% csrf_token %}
+        <button class="btn btn-outline-secondary" type="submit" name="new_add">Новые добавленные</button>
+    </form>
+    
+    <form class="searchbar_old_add" method="POST" action="{% url 'old_add_tomb' %}">
+        {% csrf_token %}
+        <button class="btn btn-outline-secondary" type="submit" name="old_add">Старые добавленные</button>
+    </form>
+    
+{% endif %}
+
+{% endblock content %}

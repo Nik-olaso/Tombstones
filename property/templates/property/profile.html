@@ -1,0 +1,84 @@
+{% load static %}
+
+{% load l10n %}
+
+
+
+<html>
+    <head>
+        <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+        <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        {% include 'snippets/profile_css.html' %}
+        <div class="head">
+            <div class="head_profile">
+                <h1>Ваш профиль</h1>
+            </div>
+
+            <div class="exit">
+                <a class="arrow-3" href="{% url 'home' %}">На главную
+                    <svg class="arrow-3-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                        <g fill="none" stroke="#8C8C8C" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
+                            <circle class="arrow-3-iconcircle" cx="16" cy="16" r="15.12"></circle>
+                            <path class="arrow-3-icon--arrow" d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"></path>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+        
+
+    </head>
+
+    <body>
+    <div class="profile_info">
+        <div class="profile_image">
+            <img src="{{ user.url }}" width="200" height="200" alt="profile_image">
+            <h3>{{ user.first_name }} {{ user.last_name }}</h3>
+        </div> 
+        
+        <div class="profile_charac">
+            <h3>Дата регистрации: 
+                {% localize on %}
+                    {{ user.created_at|date:"d.m.Y" }}
+                {% endlocalize %}
+            </h3>
+            <h3>Количество надгробий: {{ user_tombstones.count }}</h3>
+            
+        </div>
+    </div>
+
+    <div class="tomb_sum">
+        <h2>Ваши надгробия:</h2>
+    </div>
+
+
+    <div class="all_tombstones">
+    {% for user_tombstone in user_tombstones %}
+        <a href="{% url 'tombstone' user_tombstone.tombstone_id %}">
+            <div class="tombstone_block mt-2">
+                <div class='tombstone_image'>
+                </div>
+                <div class='tombstone_logo mt-3'>
+                    {% if user_tombstone.logo %}
+                        <p><img class="logo_image" src="{{user_tombstone.logo.url}}"></p>
+                    {% endif %}
+                </div>
+                <div class='tombstone_text pt-3'>
+                    <p>{{ user_tombstone.company_name }}</p>
+                    <p>{{ user_tombstone.birth_year }} - {{ user_tombstone.death_year }}</p>  
+                </div>
+            </div> 
+        </a>
+    {% endfor %}
+    </div>
+
+
+    <script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    </body>
+
+</html>
+

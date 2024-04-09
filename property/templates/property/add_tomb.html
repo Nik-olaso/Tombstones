@@ -1,0 +1,47 @@
+{% load static %}
+
+
+
+<html>
+    <head>
+        <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        {% include 'snippets/add_tomb_css.html' %}
+        <div class="head">
+
+        <div class="head_text">
+            <h1>Создай свое надгробие</h1>
+        </div>
+            <div class="exit">
+                <a class="arrow-3" href="{% url 'home' %}">На главную
+                    <svg class="arrow-3-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                        <g fill="none" stroke="#8C8C8C" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10">
+                            <circle class="arrow-3-iconcircle" cx="16" cy="16" r="15.12"></circle>
+                            <path class="arrow-3-icon--arrow" d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"></path>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </head>
+
+    <body>    
+
+    <div class="main_unit">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for f in form %}
+                <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}<br></label><br>{{ f }}</p>
+                <div class="form-error">{{ form.company_name.errors }}</div>
+            {% endfor %}
+            <button type="submit">Применить</button>
+        </form>
+    </div>
+
+    </body>
+</html>
+<!-- {% include 'snippets/footer.html' %}
+
+
+<script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script> -->

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% include 'snippets/base_css.html' %}
+{% block content %}
+
+
+
+<form class="searchbar_new search_form mb-3" method="POST" action="{% url 'new_tomb' %}">
+    {% csrf_token %}
+    <button class="btn btn-outline-secondary" type="submit" name="new">Новые стартапы</button>
+</form>
+
+<form class="searchbar_old search_form mb-3" method="POST" action="{% url 'old_tomb' %}">
+    {% csrf_token %}
+    <button class="btn btn-outline-secondary" type="submit" name="old">Старые стартапы</button>
+</form>
+
+<form class="searchbar search_form mb-3" method="POST" action="{% url 'searched_tomb' %}">
+    {% csrf_token %}
+    <input type="search" class="form-control me-2"  placeholder="Найти стартап" aria-label="Search" name="searched">
+    <button class="btn btn-outline-secondary" type="submit">Поиск</button>
+</form>
+
+<form class="searchbar_new_add search_form mb-3" method="POST" action="{% url 'new_add_tomb' %}">
+    {% csrf_token %}
+    <button class="btn btn-outline-secondary" type="submit" name="new_add">Новые добавленные</button>
+</form>
+
+<form class="searchbar_old_add search_form mb-3" method="POST" action="{% url 'old_add_tomb' %}">
+    {% csrf_token %}
+    <button class="btn btn-outline-secondary" type="submit" name="old_add">Старые добавленные</button>
+</form>
+
+<div class="all_tomb">
+    {% for old_add_tombstone in old_add_tombstones %}
+        <a href="{% url 'tombstone' old_add_tombstone.tombstone_id %}">
+            <div class="tombstone_block" id="id_{{ old_add_tombstone.tombstone_id }}">
+                <div class='tombstone_image'>
+                </div>
+                <div class='tombstone_logo mb-2'>
+                    {% if old_add_tombstone.logo %}
+                        <p><img class="logo_image rounded-circle m-auto d-block" src="{{old_add_tombstone.logo.url}}"></p>
+                    {% endif %}
+                </div>
+                <div class='tombstone_text'>
+                    <p>{{ old_add_tombstone.company_name }}</p>
+                    <p>{{ old_add_tombstone.birth_year }} - {{ old_add_tombstone.death_year }}</p>  
+                </div>
+            </div> 
+        </a>
+    {% endfor %}
+</div>
+
+
+{% endblock content %}

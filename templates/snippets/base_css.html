@@ -1,0 +1,347 @@
+{% load static %}
+
+
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+ 
+    html,body{ 
+        /* background-image: url("https://i.pinimg.com/736x/4c/69/fc/4c69fcfbb5bec7ad37c4ef03e357d99d.jpg"); */
+        background-color: #DBDBDB;
+        /* background-size: cover;
+        margin: 0;
+        padding:0; */
+        font-family: "Oswald", sans-serif;
+        /* overflow-x: hidden; */
+    
+    }
+    .main {
+        width:70%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: auto;
+    }
+    .head{
+        background: linear-gradient(to bottom right, #A9B1D1, #DBDBDB);
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+    .logo{
+        margin: auto;
+        display: flex;
+        width: 60%;
+        flex-wrap: wrap;
+        text-align: left;
+    }
+    .auth{
+        margin-right: 2vh;
+        /* transform: rotate(180deg);
+        display: inline-block; */
+    }
+    h1{
+        margin:0;
+        color: black!important;
+        font-size: 40px;
+        z-index: 1;
+        font-weight: 450;
+        /* text-shadow: 2px 0 2px #34d55c,
+            0 2px 2px #34d55c, 
+            -2px 0 2px #34d55c, 
+            0 -2px 2px #34d55c;  */
+    
+    }
+    a{
+        text-decoration: none;
+    }
+    .tombstone_block{
+        display:flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        margin-top: 10vh;
+        background-size: cover;
+        width: 15vw;
+        height: 30vh;
+    }
+    .tombstone_image{
+        /* position: relative;
+        height: 10vw; */
+        margin-top: 3vh;
+        width: 10vw;
+        height: 26vh;
+        background-color: #858585;
+        border-top-left-radius: 7vh;
+        border-top-right-radius: 7vh;
+    }
+    .tombstone_image img{
+        width: 30vw;
+    }
+    .tombstone_logo {
+        position: absolute;
+        margin-top: 5.5vh;
+    }
+    .tombstone_logo img{
+        width: 5vw;
+        height: 10vh;
+    }
+    .tombstone_text{
+        text-align:center;
+        color: #000000;
+        font-weight: 900;
+        font-size: 20px;
+        font-family: "Oswald", sans-serif;
+        position: absolute;
+        margin-top: 17vh;
+    }
+    .searchbar {
+        margin-top: 3vh;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+    }
+    .searchbar_new{
+        margin-top: 3vh;
+        margin-right: 1000px;
+        position: absolute;
+    }
+    .searchbar_old{
+        margin-top: 3vh;
+        margin-right: 700px;
+        position: absolute;        
+    }
+    .searchbar_new_add{
+        margin-top: 3vh;
+        margin-left: 700px;
+        position: absolute;
+    }
+    .searchbar_old_add{
+        margin-top: 3vh;
+        margin-left: 1050px;
+        position: absolute;
+    }
+    .arrow-3 {
+        color: #A99DD1;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 18px;
+        height: 18px;
+        line-height: 18px; 
+        display: inline-block; 
+        margin: 20px;
+    }
+    .arrow-3 .arrow-3-icon {
+        position: relative;
+        top: -1px;
+        transition: transform 0.3s ease;
+        vertical-align: middle;
+    }
+    .arrow-3 .arrow-3-iconcircle {
+        transition: stroke-dashoffset .3s ease;
+        stroke-dasharray: 95;
+        stroke-dashoffset: 95;
+    }
+    .arrow-3:hover .arrow-3-icon {
+        transform: translate3d(5px, 0, 0);
+    }
+    .arrow-3:hover .arrow-3-iconcircle {
+        stroke-dashoffset: 0;
+    }
+    .all_tomb{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    @media screen and (min-width: 250px) and (max-width: 500px) {
+        /* #id_1{
+            background-color: #000000; 
+            width: 90vw;
+            height: 30vh;
+            margin-top: 41vh;
+        } */
+        .tombstone_block{
+            width: 90vw;
+            min-height: 30vh;
+            margin-top: 10vh;
+        }
+        .tombstone_image{
+            width: 35vw;
+            min-height: 30vh;
+        }
+        .tombstone_text{
+            /* position: absolute; */
+            width: 30vw;
+            /* margin-top: 17vh; */
+            text-align: center;
+            word-wrap: break-word;
+        }
+        .tombstone_logo {
+            position: absolute;
+            height:15vh;
+        }
+        /* form {
+            width: 100%;
+            margin: auto;
+            
+            margin-left: 0;
+            margin-right: 0;
+        } */
+        .search_form{
+            width: 50%;
+            margin: auto;
+            /* background-color: red; */
+        }
+        .search_form>button{
+            width: 100%;
+        }
+        .tombstone_logo img{
+            width:20vw;
+            height:8h;
+        }
+        .head{
+            padding:5vh 1vw;
+            display: flex;
+            flex-direction: column;
+        }
+        .logo h1{
+            font-size: 32px;
+        }
+        .searchbar_new{
+            margin-top: 29vh;
+            margin-right: 0;
+            position: absolute;
+        }
+        .searchbar_old{
+            margin-right: 0;
+            margin-top: 15vh;
+            position: absolute;        
+        }
+        .searchbar_new_add{
+            margin-top: 22vh;
+            margin-left: 0;
+            position: absolute;
+        }  
+        .searchbar_old_add{
+            margin-top: 36vh;
+            margin-left: 0;
+            position: absolute;
+            
+        }
+        .searchbar{
+            /* background-color: red; */
+            flex-direction: column;
+            margin-bottom: 15vh;
+            /* position: relative; */
+        }
+        .form-control{
+            /* margin-bottom: 1vh; */
+            margin: 0.75vh auto;
+        }
+        .all_tomb:first-of-type{
+            width: 90vw;
+            height: 30vh;
+            margin-top: 35vh;
+        }
+        /* .auth img{
+            width: 7vw;
+            height: 4vh;
+        }  */
+        /* .auth{
+            background-image: url("autoriz2.png");
+            background-size: cover;
+            width: 7vw;
+            height: 4vh;
+            
+        } */
+        /* .searchbar_new_add{
+            display: flex;
+            align-items: center;
+            /* padding-right: 150vw;
+            margin-right: 100vw;
+            background-color: #000000;
+        } */
+        /* .count_form{
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            background-color: aqua;
+        } */
+    }
+    @media screen and (min-width: 500px) and (max-width: 1400px) {
+        .main{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* background-color: #000000; */
+            width: 100%;
+        }
+        .head{
+            padding-left: 5vw;
+            height: 100%;
+            margin-right: 0;
+        }
+        .tombstone_block{
+            width: 50vw;
+            height: 50vh;
+            /* margin-bottom: 0; */
+            margin-top: 10vh;
+            padding-top: 12vh;
+            margin-bottom: 10vh;
+            /* display: flex;
+            flex-wrap: wrap;
+            background-color: red; */
+        }
+        .tombstone_image{
+            width: 20vw;
+            min-height: 47vh;
+            
+        }
+        .tombstone_logo img{
+            width: 11vw;
+            height: 15vh;
+        }
+        .tombstone_text{
+            /* background-color: red; */
+            width: 20%;
+            position: absolute;
+            margin-top: 20vh;
+            word-wrap: break-word;
+        }
+        
+        .searchbar_new{
+            margin-top: 3vh;
+            margin-right: 66vw;
+            position: absolute;
+        }
+        .searchbar_old{
+            margin-top: 3vh;
+            margin-right: 34vw;
+            position: absolute;        
+        }
+        .searchbar_new_add{
+            margin-top: 3vh;
+            margin-left: 63vw;
+            position: absolute;
+        }  
+        .searchbar_old_add{
+            margin-top: 3vh;
+            margin-left: 95vw;
+            position: absolute;
+        }
+        .search_form{
+            width: 30%;
+            /* margin: auto; */
+            /* background-color: red; */
+        }
+        .search_form>button{
+            width: 50%;
+        }
+    }
+    
+ 
+ 
+    
+</style>

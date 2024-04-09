@@ -1,0 +1,190 @@
+{% load static %}
+
+
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+    html,body {
+        color: black;
+        font-family: "Oswald", sans-serif;
+        background-color: #DBDBDB;
+    }
+    .head{
+        display: flex;
+        background: linear-gradient(to bottom right, #A9B1D1, #DBDBDB);
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+    .head_text{
+        display: flex;
+        justify-content: center;
+        height: 10vh;
+    }
+    /* h1{
+        font-size: 35px;
+        font-weight: 450;
+    } */
+    .exit{
+        display: flex;
+        align-items: center;
+        position: relative;
+        
+    }
+    .main_unit{
+        display: flex;
+        width: 30%;
+        padding: 50px 30px 44px;
+        border-radius: 1.25rem;
+        text-align: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* body{
+        color: black;
+        font-family: "Oswald", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        height: inherit; 
+        background-color: #DBDBDB;
+    } */
+    button, input{
+        height: 5vh;
+        margin-bottom: 5px;
+    }
+    button{
+        width: 21vw;
+        padding-left: 16px;
+        padding-right: 16px;
+        border: 0;
+        border-radius: 1.25rem;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+        line-height: 2px;
+        background-color: #8C8C8C;
+        color: #D1D1D1;
+        cursor: pointer;
+    } 
+    input{
+        width: 20vw;
+        font-size: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 1.25rem;
+        border: 2px solid #ebebeb;
+        outline:none;
+    }
+    button:hover{
+        background-color: #A9B1D1;
+        transition: all 0.375s;
+    }
+
+    .arrow-3 {
+        color: #8C8C8C;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 20px;
+        height: 10px;
+        line-height: 18px; 
+        display: inline-block; 
+        margin: 0 2vw 5vh 2vw;     
+        /* position: absolute; */
+    }
+    .arrow-3 .arrow-3-icon {
+        position: relative;
+        top: -1px;
+        transition: transform 0.3s ease;
+        vertical-align: middle;
+        transform: rotate(180deg);
+        display: inline-block;
+    }
+    .arrow-3 .arrow-3-iconcircle {
+        transition: stroke-dashoffset .3s ease;
+        stroke-dasharray: 95;
+        stroke-dashoffset: 95;
+    }
+    .arrow-3:hover .arrow-3-icon {
+        transform: translate3d(5px, 0, 0);
+        transform: rotate(180deg);
+        display: inline-block;
+    }
+    .arrow-3:hover .arrow-3-iconcircle {
+        stroke-dashoffset: 0;
+    }
+
+    @media screen and (min-width: 250px) and (max-width: 500px){
+        .head{
+            display: flex;
+            flex-direction: column;
+            height: 15vh;
+            padding-bottom: 2vh;
+        }
+        button{
+            width: 250px;
+            display: inline-block;
+            word-wrap: break-word;
+        }
+        .main_unit{
+            display: flex;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .form-label{
+            width: 90%;
+        }
+        .head{
+            display: flex;
+            flex-direction: column;
+            height: 15vh;
+            padding-bottom: 2vh;
+        }
+        .exit{
+            position: relative;
+            margin: 0 auto;
+            height: 5vh;
+        }
+        input {
+            width: 90%;
+        }
+    }
+
+
+    @media screen and (min-width: 500px) and (max-width: 1400px) {
+        
+        input {
+            width: 90%;
+            height: 10vh;
+        }
+        button{
+            width: 250px;
+            display: inline-block;
+            word-wrap: break-word;
+            height: 10vh;
+        }
+        .main_unit{
+            display: flex;  
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .form-label{
+            width: 90%;
+        }
+        .head{
+            display: flex;
+            flex-direction: column;
+            height: 25vh;
+        }
+        .exit{
+            position: relative;
+            margin: 0 auto;
+            height: 5vh;
+        }
+
+    }
+
+</style>
